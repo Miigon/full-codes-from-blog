@@ -103,18 +103,14 @@ func (state *gameState) move(dir direction) {
 				// merge adjacent equal numbers
 				*lastNonZeroRef = num * 2
 				state.score += int(num * 2)
-				num, *numRef = 0, 0
+				*numRef = 0
 				lastNonZeroRef = nil
 			} else {
 				// move number to the side
-				if num != 0 {
-					*numRef = 0
-					*emptyJRef = num
-					lastNonZeroRef = emptyJRef
-					emptyJ++
-				} else {
-					lastNonZeroRef = numRef
-				}
+				*numRef = 0
+				*emptyJRef = num
+				lastNonZeroRef = emptyJRef
+				emptyJ++
 			}
 		}
 	}
