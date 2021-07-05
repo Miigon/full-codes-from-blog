@@ -1,0 +1,9 @@
+version = 1
+
+[[analyzers]]
+name = "go"
+enabled = true
+
+  [analyzers.meta]
+  import_root = "github.com/Miigon/full-codes-from-blog"
+  dependencies_vendored = false
